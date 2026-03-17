@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rxcli"
+version = "0.1.0"
+description = "CLI tool for automating iZotope RX 11 Audio Editor via macOS Accessibility APIs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Björn Djurnamn", email = "bjorn@djurnamn.co" },
+]
+keywords = ["izotope", "rx", "audio", "accessibility", "automation", "macos"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: MacOS X",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+dependencies = [
+    "pyobjc-framework-ApplicationServices>=12.0",
+    "pyobjc-framework-Cocoa>=12.0",
+    "pyobjc-framework-Quartz>=12.0",
+]
+
+[project.urls]
+Repository = "https://github.com/djurnamn/rxcli"
+
+[project.scripts]
+rxcli = "rxcli.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
